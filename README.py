@@ -11,8 +11,8 @@ class Student:
         grades_count = 0
         courses_in_progress_string = ', '.join(self.courses_in_progress)
         finished_courses_string = ', '.join(self.finished_courses)
-        for k in self.grades:
-            grades_count += len(self.grades[k])
+        for x in self.grades:
+            grades_count += len(self.grades[x])
         self.average_rating = sum(map(sum, self.grades.values())) / grades_count
         res = f'Имя: {self.name}\n' \
               f'Фамилия: {self.surname}\n' \
@@ -60,7 +60,7 @@ class Reviewer(Mentor):
 
      
 class Lecturer(Mentor):
-    def __init_(self, name, surname):
+    def __init__(self, name, surname):
         super().__init__(name, surname)
         self.average_rating = float()
         self.grades = {}
@@ -118,11 +118,11 @@ cool_reviewer_1.rate_hw(student_2, 'Git', 9)
 cool_reviewer_2.rate_hw(student_2, 'Git', 9)
 
 # Оцениваю лекторов
-student_1.rate_hw(best_lecturer_1, 'Python', 10)
+student_1.rate_hw(best_lecturer_1, 'Python', 9)
 student_2.rate_hw(best_lecturer_1, 'Python', 10)
 
-student_1.rate_hw(best_lecturer_2, 'Git', 10)
-student_2.rate_hw(best_lecturer_2, 'Git', 10)
+student_1.rate_hw(best_lecturer_2, 'Git', 9)
+student_2.rate_hw(best_lecturer_2, 'Git', 8)
 
 
 print(f'Студенты:\n{student_1}\n{student_2}')
